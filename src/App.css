@@ -1,3 +1,12 @@
+
+@media (min-width: 992px) {
+  
+  .onur {
+      flex: 0 0 20% !important;
+      max-width: 20% !important;
+  }
+}
+
 .App {
   text-align: center;
 }
