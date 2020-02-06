@@ -12,8 +12,7 @@ export default function Content({ data, showFilters = false }) {
     return a[selectedOption.sortBy] > b[selectedOption.sortBy] ? 1 : -1
   })
   const getFilteredData = (text = searchText) => {
-    if (!text) return data.slice(17)
-    if (text.length < 3) return data
+    if (text.length < 3) return data.length > 17 ? data.slice(0, 17) : data
     return data.filter(item => matchingSearch(text, item.title))
 
 }
