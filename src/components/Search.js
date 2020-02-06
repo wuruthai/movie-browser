@@ -5,8 +5,8 @@ export default function Search({ onChangeSearch }) {
   return(
   <FormControl
     onChange={ onChangeSearch }
-    placeholder="Search Movie / Series"
-    aria-label="Search Movie / Series"
+    placeholder="Movie / Series"
+    aria-label="Movie / Series"
   />
   )
 }

@@ -41,7 +41,7 @@ export default function App() {
               path={ "/" + route.programType }
               key={ 'route' + route.programType + index }
             >
-              <Content data={ getData(route.programType) } showSearch={ true } />
+              <Content data={ getData(route.programType) } showFilters={ true } />
             </Route>
             )
           })
