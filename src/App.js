@@ -1,5 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/App.css'
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,8 +14,6 @@ import { entries } from './constants/data'
 
 
 export default function App() {
-  // Only this component know what's going on, data flows up to down
-
   // expression for check data type
   const checkType = (item, type) => item.programType === type
 
@@ -42,7 +41,7 @@ export default function App() {
               path={ "/" + route.programType }
               key={ 'route' + route.programType + index }
             >
-              <Content data={ getData(route.programType) } />
+              <Content data={ getData(route.programType) } showSearch={ true } />
             </Route>
             )
           })
