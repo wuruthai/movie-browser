@@ -7,10 +7,12 @@ import {
   Route
 } from "react-router-dom";
 
+import { entries } from './constants/data'
 
 import Content from "./layout/Content"
 import Navbar from "./layout/Navbar";
-import { entries } from './constants/data'
+import Footer from "./layout/Footer";
+
 
 
 export default function App() {
@@ -47,6 +49,7 @@ export default function App() {
           })
         }
       </Switch>
+      <Footer />
     </Router>
   );
 }

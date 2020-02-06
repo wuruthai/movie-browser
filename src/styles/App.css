@@ -6,3 +6,27 @@
       max-width: 20% !important;
   }
 }
+
+footer ul.left,
+footer ul.right {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+footer ul.left li:not(:first-child) {
+  margin-left: 5px;
+}
+
+footer ul.left li:not(:first-child):before {
+  content: "|";
+  margin: 0 5px;
+}
+footer ul.right {
+  flex-direction: row-reverse;
+}
+footer .icon {
+  margin-left: 5px;
+}
