@@ -6,13 +6,13 @@ import { Container, Row, Col } from 'react-bootstrap'
 export default ({ dropdownData, onChangeSearch, onChangeDropdown, selectedOption }) => {
   return (
     <Container>
-      <Row>
-        <Col className="mt-4">
+      <Row className="mt-4 justify-content-between">
+        <div className="col-5">
           <Search  onChangeSearch={onChangeSearch} />
-        </Col>
-        <Col className="mt-4">
+        </div>
+        <div className="mr-3">
           <Dropdown dropdownData={ dropdownData } onChangeDropdown={ onChangeDropdown } selectedOption={ selectedOption } />
-        </Col>
+        </div>
       </Row>
     </Container>
   )

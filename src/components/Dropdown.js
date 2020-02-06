@@ -4,6 +4,7 @@ import { Dropdown, DropdownButton } from 'react-bootstrap'
 export default ({ dropdownData, onChangeDropdown, selectedOption = { id: null } }) => {
   return (
     <DropdownButton
+    alignRight
     title={!selectedOption.id ? 'Sırala' : selectedOption.name}
     variant="secondary"
     >
