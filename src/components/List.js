@@ -1,9 +1,8 @@
 import React from 'react'
 import { Row, Container } from 'react-bootstrap'
 import Item from './Item'
-import data from '../constants/data'
-export default function List() {
-  const items = JSON.parse(JSON.stringify(data.entries))
+
+export default function List({items = []}) {
 
   return (
     <Container className="mt-4 mb-4">
