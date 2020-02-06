@@ -7,12 +7,16 @@ import dropdownData from '../constants/dropdown-data'
 export default function Content({ data, showFilters = false }) {
   const [searchText, setSearchText] = useState('')
   const [selectedOption, setSelectedOption] = useState()
-  
-  const getFilteredData = (text = searchText) => data.filter(item => matchingSearch(text, item.title))
-  .sort((a, b) => {
+  const sortData = (data) => data.sort((a, b) => {
     if (!selectedOption) return false
     return a[selectedOption.sortBy] > b[selectedOption.sortBy] ? 1 : -1
   })
+  const getFilteredData = (text = searchText) => {
+    if (!text) return data.slice(17)
+    if (text.length < 3) return data
+    return data.filter(item => matchingSearch(text, item.title))
+
+}
 
 
   const filters = <Filters
@@ -26,7 +30,7 @@ export default function Content({ data, showFilters = false }) {
     <section name="content" aria-label="content" className="content">
       { showFilters ? filters : null }
       
-      <List items={ getFilteredData() } />
+      <List items={ sortData(getFilteredData()) } />
     </section>
   );
 }
