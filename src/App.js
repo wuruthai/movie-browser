@@ -13,8 +13,15 @@ import { entries } from './constants/data'
 
 
 export default function App() {
+  // Only this component know what's going on, data flows up to down
+
+  // expression for check data type
   const checkType = (item, type) => item.programType === type
+
+  // get data that gave type
   const getData = type => entries.filter(item => checkType(item, type))
+
+  // create routes like data for use routes and listing types
   const getRoutes = () => entries.reduce((acc, curr) => {
     return acc.some(item => checkType(item, curr.programType)) ?
     acc :
@@ -31,7 +38,10 @@ export default function App() {
         {
           getRoutes().map((route, index) => {
             return (
-            <Route path={ "/" + route.programType } key={ 'route' + route.programType + index }>
+            <Route
+              path={ "/" + route.programType }
+              key={ 'route' + route.programType + index }
+            >
               <Content data={ getData(route.programType) } />
             </Route>
             )
