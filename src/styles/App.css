@@ -25,7 +25,7 @@ footer ul.right {
 }
 
 footer ul.left li:not(:first-child) {
-  margin-left: 5px;
+  white-space: nowrap;
 }
 
 footer ul.left li:not(:first-child):before {

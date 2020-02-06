@@ -15,7 +15,7 @@ library.add(
   faTwitter
 );
 export default () => {
-  const footerInfo = ['Anasayfa', 'Kullanıcı Sözleşmesi', 'Gizlilik Sözleşmesi']
+  const footerInfo = ['Anasayfa', 'Kullanıcı Sözleşmesi', 'Gizlilik']
   const socialIcons = [
     faGithubAlt,
     faGoogle,
@@ -23,7 +23,7 @@ export default () => {
     faTwitter
   ]
   return (
-  <Container fluid as="footer" className="bg-dark p-3">
+  <Container fluid as="footer" className="bg-dark p-2">
     <Container>
       <Row>
         <Col as="ul" className="col-12 col-md-8 text-white left">
