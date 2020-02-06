@@ -23,7 +23,7 @@ export default function Content({ data, showFilters = false }) {
     />
 
   return(
-    <section name="content" aria-label="content">
+    <section name="content" aria-label="content" className="content">
       { showFilters ? filters : null }
       
       <List items={ getFilteredData() } />
