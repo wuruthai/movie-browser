@@ -9,26 +9,30 @@ import {
 
 import Content from "./layout/Content"
 import Navbar from "./layout/Navbar";
-import data from './constants/data'
+import { entries } from './constants/data'
 
 
 export default function App() {
-  const getData = type => data.entries.filter(item => item.programType === type)
-  const routes = data.entries.reduce((acc, curr) => {
-    return [...acc, curr.programType]
+  const checkType = (item, type) => item.programType === type
+  const getData = type => entries.filter(item => checkType(item, type))
+  const getRoutes = () => entries.reduce((acc, curr) => {
+    return acc.some(item => checkType(item, curr.programType)) ?
+    acc :
+    [...acc, { ...curr, title: curr.programType }]
   }, [])
+
   return (
     <Router>
       <Navbar />
       <Switch>
         <Route path="/" exact>
-          <Content/>
+          <Content data={ getRoutes() } />
         </Route>
         {
-          routes.map((route, index) => {
+          getRoutes().map((route, index) => {
             return (
-            <Route path={ "/" + route } key={ 'route' + route + index }>
-              <Content data={ getData(route) } />
+            <Route path={ "/" + route.programType } key={ 'route' + route.programType + index }>
+              <Content data={ getData(route.programType) } />
             </Route>
             )
           })
