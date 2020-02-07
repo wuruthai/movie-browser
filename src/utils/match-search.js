@@ -1,7 +1,7 @@
 /**
- * @param { String } searchWord - desired word
+ * @param { String } searchText - desired word
  * @param { String } keyword - Do search in searchWord
- * @param { isoCode } language - User Language
+ * @param { isoCode } lang - User Language
  */
 
 export default function (searchText, keyword, lang = navigator.language) {
