@@ -4,6 +4,8 @@
  * @param { isoCode } lang - User Language
  */
 
-export default function (searchText, keyword, lang = navigator.language) {
-  return keyword.toLocaleLowerCase(lang).match(searchText.toLocaleLowerCase(lang))
+export default function(searchText, keyword, lang = navigator.language) {
+   return keyword
+      .toLocaleLowerCase(lang)
+      .match(searchText.toLocaleLowerCase(lang))
 }
