@@ -27,7 +27,7 @@ export default () => {
     <Container>
       <Row>
         <Col as="ul" className="col-12 col-md-8 text-white left">
-          { footerInfo.map(i => <li key={ i } > { i } </li>) }
+          { footerInfo.map(info => <li key={ info } > { info } </li>) }
         </Col>
         <Col as="ul" className="col-12 col-md-4 text-white right">
           { socialIcons.map((icon, index) => <FontAwesomeIcon icon={ icon } key={ 'icon' + index } size="lg" className="icon" />) }
